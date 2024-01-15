@@ -1,5 +1,6 @@
 package problem.easy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Problem6 {
@@ -11,7 +12,12 @@ public class Problem6 {
      * @return 중복 없는 정수 리스트
      */
     public static List<Integer> removeDuplicates(List<Integer> numbers) {
-        // 여기에 코드 작성
-        return null;
+        List<Integer> list = new ArrayList<>();
+        numbers.stream()
+                .filter(s -> !list.contains(s))
+                .map(s->list.add(s))
+                .toList();
+        return list;
+        //distinct.toList() 도 가능
     }
 }
