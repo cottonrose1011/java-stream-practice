@@ -1,6 +1,7 @@
 package problem.easy;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Problem9 {
 
@@ -11,7 +12,12 @@ public class Problem9 {
      * @return 변환된 문자열 리스트
      */
     public static List<String> transformStrings(List<String> strings) {
-        // 여기에 코드 작성
-        return null;
+        List<String> list = strings.stream()
+                .map(s -> {
+                    if (s.length() >= 3) return s.toUpperCase();
+                    else return s;
+                })
+                .collect(Collectors.toList());
+        return list;
     }
 }
