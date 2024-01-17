@@ -13,7 +13,6 @@ public class Problem15 {
      * @return 'apple'을 값으로 가지는 모든 키의 Set
      */
     public static Set<String> keysForValue(Map<String, String> map, String value) {
-
         return map.entrySet().stream()
                 .filter(s -> value.equals(s.getValue()))
                 .map(Map.Entry::getKey)
